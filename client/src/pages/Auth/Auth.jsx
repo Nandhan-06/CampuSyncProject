@@ -10,8 +10,8 @@ function Auth() {
   const dispatch = useDispatch()
   const loading = useSelector((state)=>state.authReducer.loading);
   const [isSignUp, setIsSignUp] = useState(true);
-  //console.log(loading)
-  //const dispatch = useDispatch()
+  // console.log(loading)
+  // const dispatch = useDispatch()
   const [data, setData]=useState({firstname:"", lastname: "",password: "", confirmpass: "",username: "" })
   const [confirmpass, setConfirmPass] = useState(true);
   const handleChange = (e) => {
@@ -77,6 +77,8 @@ function Auth() {
                 </div>
                 <button className="button infoButton" type="submit" disabled={loading}>
                   {loading? "Loading..." : isSignUp ? "Signup" : "Log In"}</button>
+                  {/* <button className="button infoButton" type="submit">
+                  {isSignUp ? "Signup" : "Log In"}</button> */}
             </form>
         </div>
     </div>
