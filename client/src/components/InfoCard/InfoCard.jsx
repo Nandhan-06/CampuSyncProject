@@ -42,7 +42,7 @@ const InfoCard = () => {
     <div className='InfoCard'>
       <div className="InfoHead">
         <h4>Profile Info</h4>
-        {user._id === profileUserId ? (  <div>
+        <div>
             <UilPen 
             width='2rem' 
             height='1.2rem' 
@@ -54,9 +54,6 @@ const InfoCard = () => {
              data = {user}
              />
          </div>
-        ) : (
-          ""
-        )}
        
       </div>
       <div className="info">

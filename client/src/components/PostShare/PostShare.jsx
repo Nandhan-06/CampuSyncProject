@@ -56,7 +56,7 @@ function PostShare() {
 
   return (
     <div className="PostShare">
-      <img src={user.coverPicture? serverPublic + user.coverPicture : serverPublic + "defaultProfile.png"} alt="" />
+      <img src={user.coverPicture? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" />
       <div>
         <input ref={desc} required type="text" placeholder="What's happening" />
         <div className="PostOptions">

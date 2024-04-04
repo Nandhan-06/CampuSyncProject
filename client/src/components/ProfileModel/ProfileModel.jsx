@@ -2,8 +2,9 @@ import { Modal, useMantineTheme } from "@mantine/core";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { uploadImage } from "../../api/UploadRequest";
+import { uploadImage } from "../../actions/uploadAction";
 import { updateUser } from "../../actions/userAction";
+import { Model } from "mongoose";
 //import { updateUser } from "../../../../server/Controllers/UserController";
 
 function ProfileModel({ modelOpened, setModelOpened , data }) {
@@ -11,16 +12,16 @@ function ProfileModel({ modelOpened, setModelOpened , data }) {
 
   const {password, ...other} = data;
   const [formData, setFormData] = useState(other);
-  const [profileImage, setProfileImage] = useState(null)
-  const [coverImage, setCoverImage] = useState(null)
-  const dispatch = useDispatch()
-  const param = useParams()
-  const {user} = useSelector((state)=>state.authReducer.authData)
+  const [profileImage, setProfileImage] = useState(null);
+  const [coverImage, setCoverImage] = useState(null);
+  const dispatch = useDispatch();
+  const param = useParams();
+  const {user} = useSelector((state)=>state.authReducer.authData);
 
   const handleChange = (e)=> {
     setFormData({...formData, [e.target.name]: e.target.value})
 
-  }
+  };
 
   const onImageChange =(event)=> {
     if(event.target.files && event.target.files[0]){
